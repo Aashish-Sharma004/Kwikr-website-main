@@ -1,0 +1,8 @@
+node_modules
+.next
+.env.local
+
+git rm -r --cached .next
+git add .gitignore
+git commit -m "remove .next from tracking"
+git push

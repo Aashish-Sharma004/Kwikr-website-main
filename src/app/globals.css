@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --green-primary: #1a9e3f;
+  --green-light: #22c55e;
+  --green-dark: #15803d;
+  --yellow: #f5a623;
+  --orange: #f97316;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #f8f9fa;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #c5c5c5; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
+
+/* Horizontal scroll for sliders */
+.scroll-container {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-container::-webkit-scrollbar { display: none; }
+
+/* Hide scrollbar utility */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+/* Product card */
+.product-card {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px -8px rgba(26, 158, 63, 0.18), 0 6px 14px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Gradient backgrounds */
+.hero-gradient {
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 50%, #fff9c4 100%);
+}
+
+.green-gradient {
+  background: linear-gradient(135deg, #1a9e3f 0%, #22c55e 100%);
+}
+
+.offer-gradient {
+  background: linear-gradient(135deg, #f97316 0%, #f5a623 100%);
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Badge styles */
+.badge-discount {
+  @apply bg-green-500 text-white text-xs font-bold px-2 py-0.5 rounded;
+}
+
+.badge-organic {
+  @apply bg-lime-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full;
+}
+
+.badge-fresh {
+  @apply bg-emerald-500 text-white text-xs font-semibold px-2 py-0.5 rounded-full;
+}
+
+/* Cart item animation */
+.cart-item-enter {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Marquee track used by banner strips */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 22s linear infinite;
+}
+
+/* Floating decoration used by parallax sections */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.float-slow {
+  animation: floatY 5s ease-in-out infinite;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-green-600 hover:bg-green-700 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+}
+
+.btn-secondary {
+  @apply bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-200;
+}
+
+/* Section heading */
+.section-heading {
+  @apply text-2xl md:text-3xl font-bold text-gray-900;
+}
+
+/* Card base */
+.card {
+  @apply bg-white rounded-2xl shadow-card p-4;
+}
